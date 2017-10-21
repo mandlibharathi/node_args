@@ -6,4 +6,4 @@ app.get('/', function (req, res) {
 })
 
 var server = app.listen(8081)
-console.log('server is runing');
+console.log('server is runing at http://localhost:8081');
