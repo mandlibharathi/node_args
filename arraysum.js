@@ -1,16 +1,12 @@
-function sum(){
-var a = arguments;
-results=[];
-count=a[0].length;
-L=a.length;
-sum=0;
-next=i;
-while(next<count){
-    sum=0;
-    i=0;
-    sum+=num(a[i++][next]);
+var a=[[1,2]];
+var b=[[2,3]];
+var c=[];
+c=new Array(a.length);
+
+for(var i=0;i<c.length;i++){
+c[i]=new Array(a[i].length);
+for (var j=0;j<b[i].length;j++){
+c[i][j]=a[i][j]+b[i][j];
 }
-result[next++]=sum;
 }
-var a=[1,2],b=[2,3];
-console.log(sum(a,b));
+console.log(c);
