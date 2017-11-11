@@ -1,5 +1,5 @@
-var a=[1,2];
-var b=[2,3];
+var a=[[1,2]];
+var b=[[2,3]];
 var c=[];
 c=new Array(a.length);
 

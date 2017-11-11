@@ -3,9 +3,10 @@ var bodyParser=require('body-parser');
 
 var app=express();
 app.use(bodyParser.json({type:"application/json"}));
+
 var person={
-name:"xxxxx",
-age:19
+name:"xxxx",
+age:22
 }
 app.get('/',function(req,res){
 res.send(person);
