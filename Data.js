@@ -1,7 +1,15 @@
 var mongoose=require('mongoose');
 var Employeeschema=mongoose.Schema({
-   name :{
+    empname :{
         type:String,
+        required:true
+    },
+    age :{
+        type:Number,
+        required:true
+    },
+    salary :{
+        type:Number,
         required:true
     }
 })
