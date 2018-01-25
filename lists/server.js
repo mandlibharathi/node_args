@@ -7,7 +7,7 @@ var server=app.listen(3000,function(){
 app.use(express.static('public'))
 var io=socket(server)
 io.on('connection',function(socket){
-    console.log('user  connected',socket.id)
+    console.log('user   is connected',socket.id)
     socket.on('chat',function(data){
         io.sockets.emit('chat',data)
     })
