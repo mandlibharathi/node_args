@@ -1,21 +1,25 @@
-let express=require('express')
+var  express=require('express')
+var app=express(); 
+var bodyParser=require('body-parser');
 var mongoose=require('mongoose')
 mongoose.connect('mongodb://localhost/book')
 var db=mongoose.connection;
 db.on('error',(err)=>{
     if(err) throw err
         else{
-            console.log('server is connected...S')
+console.log('server is connected...')
         }
 })
-
-let app=express();
-var Router=require('/home/gcr/Desktop/HELLO/router.js')
-var bodyParser=require('body-parser');
+var Router=require('./../HELLO/router.js')
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.urlencoded({extended:true}))
+app.set('view engine','ejs')
+//app.use(express.methodOverride())
+ app.use('/asserts',express.static('asserts'))
+
 app.use('/',Router)
+// app.use('/books',Router)
 app.listen(5000,()=>{
-    console.log(`server is connected 
-    sucessfully`)
+   console.log(`server is connected 
+     sucessfully`)
 })
