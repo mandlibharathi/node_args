@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="asserts/text.css">
+</head>
+<div id="container">
+    <div id="header">
+        <h1>E-Book  Management System</h1>
+    </div>
+  <div id="Wrapper">
+  </div>   
+  <div id="navi">
+  </div>      
+  <strong>id</strong>:<%= user._id %> <br>
+  <strong>title</strong>:<%= user.title %> <br>
+  <strong>description</strong>:<%= user.description %><br>
+  <strong>Author</strong>:<%= user.Author %><br>
+  <strong> publish</strong>:<%= user.publish %><br>
+  <strong>rating</strong>:<%= user.rating %> <br>
+  <strong>votes</strong>:<%= user.votes%>  <br>
+  <strong>price</strong>:<%= user.price %> <br>
+  <strong>availablestores</strong>:<%= user.available_stores %> <br>
+  <strong>date</strong>:<%= user.date %><br>
+  <strong>email</strong>:<%= user.email %> <br>
+  <strong>Password</strong>:<%= user.password %><br>
+<div>
+    <%if (user.title=="The Nightingale"){ %>
+<a href="https://read.amazon.in/nc/?kcrFree=only&asin=B00NLFVVOU&tag=x_gr_w_preview_kcr_in-21">
+<img src="https://images.gr-assets.com/books/1451446316l/21853621.jpg">
+</a>
+<% }%>
+</div>
+</div>
+</body>
+</html>

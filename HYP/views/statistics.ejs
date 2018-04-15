@@ -1,0 +1,23 @@
+<html>
+        <head>
+            <link rel="stylesheet" href="asserts/text.css">
+        </head>
+        <div id="container">
+            <div id="header">
+                <h1>E-Book  Management System</h1>
+            </div>
+          <div id="Wrapper">
+          </div>   
+          <div id="navi">
+          </div>      
+          <% user.forEach(function (user) { %>
+            <li>  
+            <strong>rating</strong>: <%= user.rating%> <br>
+            <strong>votes</strong>: <%=user.votes%> <br>
+            <strong>title</strong>: <%=user.title%> <br>
+            
+            
+            </li>                                   
+        <% }) %>
+        </body>
+        </html>

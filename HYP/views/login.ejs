@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="asserts/text.css">
+</head>
+<div id="container">
+    <div id="header">
+        <h1>E-Book  Management System</h1>
+    </div>
+  <div id="Wrapper">
+        <form name="form1" method="POST" action='/update' >
+             <input type="hidden" name="_method" value="PUT"/> 
+            <table>
+                <tr>
+                <td>title</td>
+         <td><input type="text" name="title" ></td>
+          <tr>
+          <td>votes</td>
+          <td><input type="text" name="votes" ></td>
+          </tr>
+          <tr>
+              <td>rating</td>
+              <td><input type="text" name="rating" ></td>
+              </tr>
+              <tr>
+                    <td>URL</td>
+                    <td><input type="text" name="URL" ></td>
+                    </tr>
+          <tr>
+          <td colspan="2"> <input type="submit" value="Save" ></td>
+           </tr> 
+      </table>
+      </form>
+    
+    </div>
+  <div id="navi">
+  </div>
+
+
+</div>
+</body>
+</html>
