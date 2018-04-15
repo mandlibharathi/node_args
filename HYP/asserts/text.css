@@ -1,0 +1,90 @@
+html,body{
+    margin:0;
+    padding:0
+}
+body{
+    font:90% calibri,sans-serif;
+    text-align:center
+}
+div#header{
+    background-color: lightgreen
+}
+div#header h1{
+    height: 80px;
+    line-height: 80px;
+    padding-left:10px;
+}
+div#container{
+    height: auto;
+    width:700px;
+    margin:0 auto;
+    text-align:left;
+}
+div#Wrapper{
+    float: right;
+    width:500px
+}
+div#Wrapper p{
+    line-height: 1.5;
+    text-align:justify;
+}
+div#navi{
+    float: left;
+    height: 500px;
+    width:100px;
+    background-color:wheat;
+}
+div#navi ul{
+    margin-left:10px;
+   list-style-type:ssquare;
+   list-style-type:square;
+}
+div#navi li{
+    margin-bottom:5px;
+}
+div#footer{
+    clear: both;
+    width:100%;
+    background-color:wheat
+}
+div#footer p{
+    margin:0;
+    padding:5px 10px;
+}
+a {
+    padding:5px;
+    text-decoration: none;
+    color:brown;
+
+}
+ a:hover{
+    color:green;
+} 
+p{
+    margin:0 10px 10px;
+}
+div#footer p{
+    text-align:center
+}
+div#imgContainer{
+    float:left;
+}
+div#imgContainer img{
+   padding-left: 20px;
+   padding-right:1px;
+   padding-top:50px;
+   padding-bottom:1px;
+   height: 150px;
+   width:150px
+}
+div#imgcontainer{
+    float:left;
+}
+div#imgcontainer img{
+   /* padding-left: 5px;
+   padding-right:1px;
+   padding-top:50px;
+   padding-bottom:1px; */
+    /* height: 100px;  */
+   width:220px
+}
