@@ -1,0 +1,18 @@
+
+    table,tr,td,th{
+        border:3px solid blue;
+
+        border-collapse: collapse;
+        font-weight: bold;
+        font-style:italic;
+        caption-side: top;
+        max-width:200px;
+        height: 100px; 
+        text-align:center;
+
+    }
+    caption{
+       font-variant: yellow;
+       text-transform: uppercase;
+       color: #abbfda;
+    }
