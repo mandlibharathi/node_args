@@ -12,13 +12,13 @@ app.use(bodyParser.json())
 app.set('view engine','ejs')
 app.use('/asserts',express.static('asserts'))
 app.use(express.static('views'))
- 
-var mongoURI="mongodb://localhost/files"
 
-var conn=mongoose.createConnection("mongoURI")
+var mongoURI="mongodb://localhost/Mongofiles"
+var conn=mongoose.createConnection(mongoURI)
+let gfs;
 conn.once("open",()=>{
-    var gfs=Grid(conn.db,mongoose.mongo)
-    gfs.collection("uploads")
+    gfs=Grid(conn.db,mongoose.mongo)
+    gfs.collection('fs')
 })
 //create storage engine
 const storage=new gridFsStorage({
@@ -30,23 +30,70 @@ const storage=new gridFsStorage({
                     return reject(err)
 
                 }
-             const filename=buf.toString('hex')+path.extname(file.originalname);
+const filename=buf.toString('hex')+path.extname(file.originalname);
              const fileInfo={
                  filename:filename,
-                 bukketname:'uploads'
+                 bukketname:'fs'
              };
              resolve(fileInfo)
             })
         })
     }
 })
- const upload=multer({storage})
+  const upload=multer({storage})
  app.get('/',(req,res)=>{
      res.render("index.html")
  })
 app.post('/upload',upload.single('file'),(req,res)=>{
  res.json({file:req.file})
 })
+
+app.get('/file/:filename', function(req, res){
+    gfs.files.findOne({filename: req.params.filename},(err,file)=>{
+        if(!file||file.length===0){
+            res.status(404).json({msg:'no Onefile found!'})
+        }
+
+        else{
+            res.json({file:file})
+        }
+    })
+
+});
+app.get('/files',(req,res)=>{
+    gfs.files.find().toArray((err,files)=>{
+        if(!files||files.length===0){
+            res.status(404).json({msg:'no file found!'})
+        }
+
+        else{
+            res.json(files)
+        }
+    })
+})
+
+app.get('/files/:filename', function(req, res){
+    gfs.files.findOne({filename: req.params.filename},(err,file)=>{
+        if(!file||file.length===0){
+            res.status(404).json({msg:'noimage  found!'})
+        }
+       if(file.contentType==='application/pdf'){
+           var readStream=gfs.createReadStream(file.filename)
+           readStream.pipe(res)
+       }
+       else{
+res.status(404).json({message:'there is no image'})
+       }
+        
+    })
+
+});
+
+
+
+
+
+
 app.listen(8000,function(){
     console.log("hey mongodb......")
 })
