@@ -77,7 +77,7 @@ app.get('/files/:filename', function(req, res){
         if(!file||file.length===0){
             res.status(404).json({msg:'noimage  found!'})
         }
-       if(file.contentType==='application/pdf'){
+if(file.contentType==='application/pdf'||'image/jpeg'){
            var readStream=gfs.createReadStream(file.filename)
            readStream.pipe(res)
        }
