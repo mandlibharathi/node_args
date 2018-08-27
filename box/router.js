@@ -92,25 +92,25 @@ router.get('/', function(req, res){
     res.redirect('/upload');
   });
   var fs = require('fs');
-//   var stream = fs.createReadStream('/home/gcr/Documents/resume.pdf');
-//   var folderID = "0";
-
-//   client.files.uploadFile(folderID, 'resume.pdf', stream)
-//       .then(file => {
-//           // ...
-//       });
-
-    router.post('/upload',(req,res,file)=>{
-//var filename=req.body
-var stream = fs.createReadStream(path.join(req.file.filename));
+  var stream = fs.createReadStream('/home/gcr/Documents/resume.pdf');
   var folderID = "0";
 
-  client.files.uploadFile(folderID,stream)
+  client.files.uploadFile(folderID, 'resume.pdf', stream)
       .then(file => {
+          // ...
+      });
+
+//     router.post('/upload',(req,res,file)=>{
+// //var filename=req.body
+// var stream = fs.createReadStream(path.join(req.file.filename));
+//   var folderID = "0";
+
+//   client.files.uploadFile(folderID,stream)
+//       .then(file => {
        
-      })
+//       })
         
-        });
+//         });
             
         
     
