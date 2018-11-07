@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Document</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<style>.hidden { display: none; }</style>
+</head>
+<body>
+    <div class="container">
+    <h1> Os vote</h1>
+    <form id="vote-form">
+        <p>
+        <input type="radio" name="os" id="windows" value="Windows">
+        <label for="windows" >Windows</label>
+        </p>
+        <p>
+        <input type ="radio" name="os" id="macos" value="Macos">
+         <label for="macos" >Macos</label>
+                </p>
+               
+                <p>
+            <input type= "radio" name="os" id="linux" value="Linux">
+                    <label for="linux" >Linux</label>
+                 </p>
+     <input type="submit"  value="Vote" class="btn">
+    </form>
+    <br><br>
+    <h5 style="text-align: center" id="chartTitle"></h5> 
+     
+    <div id="chartContainer" style="height:300px;width:100%"></div>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/4.2.2/pusher.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script> -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
